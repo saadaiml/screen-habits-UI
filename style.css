@@ -1,0 +1,141 @@
+:root {
+  --bg: #F1F4F0;
+  --card: #FFFFFF;
+  --ink: #1E2A28;
+  --ink-soft: #4A5957;
+  --accent: #3D6B63;
+  --accent-soft: #E4ECE9;
+  --highlight: #D98E6F;
+  --highlight-soft: #FBEDE6;
+  --border: #DCE4E1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 48px 20px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 40px 36px;
+}
+
+.intro h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  max-width: 22ch;
+}
+
+.intro p {
+  margin: 0 0 32px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 40ch;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--accent);
+  padding: 0 0 14px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #335650;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+}
+
+.result.flag {
+  background: var(--highlight-soft);
+}
+
+.result h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  margin: 0 0 6px;
+}
+
+.result p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.result.error {
+  background: var(--highlight-soft);
+  color: #7A3B23;
+}

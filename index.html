@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Habits Check</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card">
+    <header class="intro">
+      <h1>How's your relationship with your screen?</h1>
+      <p>Answer honestly about a typical day. This takes about a minute.</p>
+    </header>
+
+    <form id="habitsForm">
+      <fieldset>
+        <legend>Your daily habits</legend>
+
+        <div class="field">
+          <label for="age">Age</label>
+          <input type="number" id="age" required min="1" step="1">
+        </div>
+
+        <div class="field">
+          <label for="daily_screen_time_hours">Total screen time (hours/day)</label>
+          <input type="number" id="daily_screen_time_hours" required min="0" step="0.1">
+        </div>
+
+        <div class="field">
+          <label for="social_media_hours">Social media (hours/day)</label>
+          <input type="number" id="social_media_hours" required min="0" step="0.1">
+        </div>
+
+        <div class="field">
+          <label for="gaming_hours">Gaming (hours/day)</label>
+          <input type="number" id="gaming_hours" required min="0" step="0.1">
+        </div>
+
+        <div class="field">
+          <label for="work_study_hours">Work / study on screen (hours/day)</label>
+          <input type="number" id="work_study_hours" required min="0" step="0.1">
+        </div>
+
+        <div class="field">
+          <label for="sleep_hours">Sleep (hours/night)</label>
+          <input type="number" id="sleep_hours" required min="0" step="0.1">
+        </div>
+
+        <div class="field">
+          <label for="notifications_per_day">Notifications received per day</label>
+          <input type="number" id="notifications_per_day" required min="0" step="1">
+        </div>
+
+        <div class="field">
+          <label for="app_opens_per_day">Times you open apps per day</label>
+          <input type="number" id="app_opens_per_day" required min="0" step="1">
+        </div>
+
+        <div class="field">
+          <label for="weekend_screen_time">Weekend screen time (hours/day)</label>
+          <input type="number" id="weekend_screen_time" required min="0" step="0.1">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>About you</legend>
+
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select id="gender" required>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="stress_level">Stress level</label>
+          <select id="stress_level" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="academic_work_impact">Has screen use affected your academic/work performance?</label>
+          <select id="academic_work_impact" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <button type="submit" id="submitBtn">Check my result</button>
+    </form>
+
+    <section id="result" class="result" hidden></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
