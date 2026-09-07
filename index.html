@@ -3,76 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Screen Habits Check</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Screen-Time Addiction Risk Predictor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <main class="card">
-    <header class="intro">
-      <h1>How's your relationship with your screen?</h1>
-      <p>Answer honestly about a typical day. This takes about a minute.</p>
+  <div class="page">
+    <header class="title-row">
+      <span class="title-emoji">📱</span>
+      <h1>Screen-Time Addiction Risk Predictor</h1>
     </header>
 
-    <form id="habitsForm">
-      <fieldset>
-        <legend>Your daily habits</legend>
+    <form id="habitsForm" class="card">
+      <div class="grid">
 
         <div class="field">
           <label for="age">Age</label>
-          <input type="number" id="age" required min="1" step="1">
+          <select id="age" required>
+            <option value="17">Under 18</option>
+            <option value="19.5">18 to 21</option>
+            <option value="23.5" selected>22 to 25</option>
+            <option value="28">26 to 30</option>
+            <option value="35">31 to 40</option>
+            <option value="45">41 and above</option>
+          </select>
         </div>
 
         <div class="field">
-          <label for="daily_screen_time_hours">Total screen time (hours/day)</label>
-          <input type="number" id="daily_screen_time_hours" required min="0" step="0.1">
+          <label for="sleep_hours">Sleep</label>
+          <select id="sleep_hours" required>
+            <option value="4">Less than 5 hrs</option>
+            <option value="5.5">5 to 6 hrs</option>
+            <option value="6.5">6 to 7 hrs</option>
+            <option value="7.5" selected>7 to 8 hrs</option>
+            <option value="8.5">8 to 9 hrs</option>
+            <option value="9.5">9+ hrs</option>
+          </select>
         </div>
 
         <div class="field">
-          <label for="social_media_hours">Social media (hours/day)</label>
-          <input type="number" id="social_media_hours" required min="0" step="0.1">
+          <label for="daily_screen_time_hours">Daily screen time</label>
+          <select id="daily_screen_time_hours" required>
+            <option value="1">0 to 2 hrs</option>
+            <option value="3">2 to 4 hrs</option>
+            <option value="5">4 to 6 hrs</option>
+            <option value="7" selected>6 to 8 hrs</option>
+            <option value="9">8 to 10 hrs</option>
+            <option value="11">10+ hrs</option>
+          </select>
         </div>
 
         <div class="field">
-          <label for="gaming_hours">Gaming (hours/day)</label>
-          <input type="number" id="gaming_hours" required min="0" step="0.1">
+          <label for="notifications_per_day">Notifications per day</label>
+          <select id="notifications_per_day" required>
+            <option value="10">0 to 20</option>
+            <option value="35">20 to 50</option>
+            <option value="75" selected>50 to 100</option>
+            <option value="125">100 to 150</option>
+            <option value="175">150 to 200</option>
+            <option value="225">200+</option>
+          </select>
         </div>
 
         <div class="field">
-          <label for="work_study_hours">Work / study on screen (hours/day)</label>
-          <input type="number" id="work_study_hours" required min="0" step="0.1">
+          <label for="social_media_hours">Social media use</label>
+          <select id="social_media_hours" required>
+            <option value="0.5">0 to 1 hrs</option>
+            <option value="1.5" selected>1 to 2 hrs</option>
+            <option value="2.5">2 to 3 hrs</option>
+            <option value="3.5">3 to 4 hrs</option>
+            <option value="4.5">4+ hrs</option>
+          </select>
         </div>
 
         <div class="field">
-          <label for="sleep_hours">Sleep (hours/night)</label>
-          <input type="number" id="sleep_hours" required min="0" step="0.1">
+          <label for="app_opens_per_day">App opens per day</label>
+          <select id="app_opens_per_day" required>
+            <option value="10">0 to 20</option>
+            <option value="30">20 to 40</option>
+            <option value="50" selected>40 to 60</option>
+            <option value="70">60 to 80</option>
+            <option value="90">80 to 100</option>
+            <option value="110">100+</option>
+          </select>
         </div>
 
         <div class="field">
-          <label for="notifications_per_day">Notifications received per day</label>
-          <input type="number" id="notifications_per_day" required min="0" step="1">
+          <label for="gaming_hours">Gaming</label>
+          <select id="gaming_hours" required>
+            <option value="0">None</option>
+            <option value="0.75" selected>0.5 to 1 hr</option>
+            <option value="1.5">1 to 2 hrs</option>
+            <option value="2.5">2 to 3 hrs</option>
+            <option value="3.5">3+ hrs</option>
+          </select>
         </div>
 
         <div class="field">
-          <label for="app_opens_per_day">Times you open apps per day</label>
-          <input type="number" id="app_opens_per_day" required min="0" step="1">
+          <label for="weekend_screen_time">Weekend screen time</label>
+          <select id="weekend_screen_time" required>
+            <option value="1">0 to 2 hrs</option>
+            <option value="3">2 to 4 hrs</option>
+            <option value="5">4 to 6 hrs</option>
+            <option value="7" selected>6 to 8 hrs</option>
+            <option value="9">8 to 10 hrs</option>
+            <option value="11">10+ hrs</option>
+          </select>
         </div>
 
         <div class="field">
-          <label for="weekend_screen_time">Weekend screen time (hours/day)</label>
-          <input type="number" id="weekend_screen_time" required min="0" step="0.1">
+          <label for="work_study_hours">Work/study screen time</label>
+          <select id="work_study_hours" required>
+            <option value="0.5">0 to 1 hrs</option>
+            <option value="1.5">1 to 2 hrs</option>
+            <option value="2.5" selected>2 to 3 hrs</option>
+            <option value="3.5">3 to 4 hrs</option>
+            <option value="5">4 to 6 hrs</option>
+            <option value="7">6+ hrs</option>
+          </select>
         </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>About you</legend>
 
         <div class="field">
           <label for="gender">Gender</label>
           <select id="gender" required>
-            <option value="Female">Female</option>
+            <option value="Female" selected>Female</option>
             <option value="Male">Male</option>
             <option value="Other">Other</option>
           </select>
@@ -83,24 +137,26 @@
           <select id="stress_level" required>
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
-            <option value="High">High</option>
+            <option value="High" selected>High</option>
           </select>
         </div>
 
         <div class="field">
-          <label for="academic_work_impact">Has screen use affected your academic/work performance?</label>
+          <label for="academic_work_impact">Impacting academic/work performance?</label>
           <select id="academic_work_impact" required>
-            <option value="No">No</option>
+            <option value="No" selected>No</option>
             <option value="Yes">Yes</option>
           </select>
         </div>
-      </fieldset>
+      </div>
 
-      <button type="submit" id="submitBtn">Check my result</button>
+      <button type="submit" id="submitBtn">Predict risk</button>
+
+      <hr class="divider">
+
+      <section id="result" class="result" hidden></section>
     </form>
-
-    <section id="result" class="result" hidden></section>
-  </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

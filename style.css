@@ -1,13 +1,13 @@
 :root {
-  --bg: #F1F4F0;
-  --card: #FFFFFF;
-  --ink: #1E2A28;
-  --ink-soft: #4A5957;
-  --accent: #3D6B63;
-  --accent-soft: #E4ECE9;
-  --highlight: #D98E6F;
-  --highlight-soft: #FBEDE6;
-  --border: #DCE4E1;
+  --text: #262730;
+  --label: #31333F;
+  --field-bg: #F0F2F6;
+  --border: #E6E6E6;
+  --focus: #FF4B4B;
+  --good-bg: #DFF5E1;
+  --good-text: #1E7B34;
+  --bad-bg: #FDE8E8;
+  --bad-text: #B02A2A;
 }
 
 * {
@@ -16,94 +16,101 @@
 
 body {
   margin: 0;
-  padding: 48px 20px;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: 'Inter', sans-serif;
+  padding: 40px 20px;
+  background: #FFFFFF;
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: center;
 }
 
-.card {
+.page {
   width: 100%;
-  max-width: 560px;
-  background: var(--card);
+  max-width: 760px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.title-emoji {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.title-row h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.card {
   border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 40px 36px;
+  border-radius: 10px;
+  padding: 28px;
 }
 
-.intro h1 {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
-  font-size: 1.9rem;
-  line-height: 1.25;
-  margin: 0 0 10px;
-  max-width: 22ch;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 18px;
 }
 
-.intro p {
-  margin: 0 0 32px;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  max-width: 40ch;
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0 0 28px;
-}
-
-legend {
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--accent);
-  padding: 0 0 14px;
-}
-
-.field {
-  margin-bottom: 16px;
-}
-
-label {
+.field label {
   display: block;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
+  font-size: 0.9rem;
+  color: var(--label);
   margin-bottom: 6px;
 }
 
-input, select {
+.field select {
   width: 100%;
   padding: 10px 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: inherit;
   font-size: 0.95rem;
-  color: var(--ink);
-  background: var(--bg);
-  border: 1px solid var(--border);
+  color: var(--label);
+  background: var(--field-bg);
+  border: 1px solid var(--field-bg);
   border-radius: 8px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2331333F' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
 }
 
-input:focus, select:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
+.field select:focus {
+  outline: none;
+  border-color: var(--focus);
 }
 
 button {
-  width: 100%;
-  padding: 14px;
-  font-family: 'Inter', sans-serif;
+  margin-top: 24px;
+  padding: 8px 18px;
+  font-family: inherit;
   font-size: 0.95rem;
-  font-weight: 600;
-  color: #fff;
-  background: var(--accent);
-  border: none;
+  font-weight: 500;
+  color: var(--label);
+  background: #FFFFFF;
+  border: 1px solid var(--border);
   border-radius: 8px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #335650;
+  border-color: var(--focus);
+  color: var(--focus);
 }
 
 button:disabled {
@@ -111,31 +118,35 @@ button:disabled {
   cursor: default;
 }
 
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0 20px;
+}
+
 .result {
-  margin-top: 24px;
-  padding: 20px;
-  border-radius: 12px;
-  background: var(--accent-soft);
-  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
 }
 
-.result.flag {
-  background: var(--highlight-soft);
+.result.good {
+  background: var(--good-bg);
+  color: var(--good-text);
 }
 
-.result h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 1.2rem;
-  margin: 0 0 6px;
+.result.bad {
+  background: var(--bad-bg);
+  color: var(--bad-text);
 }
 
-.result p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
+.result .icon {
+  font-size: 1.1rem;
 }
 
-.result.error {
-  background: var(--highlight-soft);
-  color: #7A3B23;
+.result strong {
+  font-weight: 700;
 }
