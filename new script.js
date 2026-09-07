@@ -1,6 +1,5 @@
-// 1. This is the ONE line you change after deploying your backend to Render.
-//    Right now it points to your own computer, for local testing.
-const API_URL = "http://127.0.0.1:8000/predict";
+// 1. This now points to your live Railway backend instead of your own computer.
+const API_URL = "https://screen-habits-api-production.up.railway.app/predict";
 
 // 2. Grab references to the parts of the page we need to work with.
 const form = document.getElementById("habitsForm");
